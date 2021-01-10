@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    build:
+      context: ./test_backend/
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000 --noreload
+    volumes:
+      - ./test_backend/:/code
+    ports:
+      - "8000:8000"
